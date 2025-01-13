@@ -5,6 +5,8 @@ import FailedRequest from '../models/FailedRequest.js';
 const ALERT_THRESHOLD = parseInt(process.env.ALERT_THRESHOLD, 10) || 5;
 const TIME_WINDOW = parseInt(process.env.TIME_WINDOW, 10);
 
+
+// 
 export async function trackFailedMails(ip){
     const now = new Date();
     const windowStart = new Date(now - TIME_WINDOW*60000);
@@ -20,6 +22,7 @@ export async function trackFailedMails(ip){
 }
 
 
+// send email function for the reauired user and its ip
 export function sendEmailAlert(ip){
     const transporter = nodemailer.createTransport({
         service: 'gmail',

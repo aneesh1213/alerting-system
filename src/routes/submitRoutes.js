@@ -18,6 +18,7 @@ router.post("/", async (req, res) => {
             timestamp: new Date(),
             reason
         });
+        
 
         // tracking failed requests
 
@@ -28,7 +29,6 @@ router.post("/", async (req, res) => {
 
         return res.status(401).json({error: reason});
     }
-
     // else it was a valid request
 
     return res.status(200).json({message: 'Success'});
