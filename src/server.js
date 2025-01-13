@@ -5,7 +5,7 @@ import app from "./app.js";
 
 dotenv.config();
 
-const mongoUri = process.env.MONGO_URI || "mongodb+srv://aneeshkulkarni007:583683@cluster0.sut6y.mongodb.net/alerting-system"
+const mongoUri = process.env.MONGO_URI.toString();
 
 mongoose.connect(mongoUri, {
     tls: true
